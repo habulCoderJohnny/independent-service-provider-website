@@ -19,14 +19,13 @@ const Header = () => {
                             <NavDropdown.Item as={Link} to="/night-photography">Night Photography</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Sky Photography</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Astro Photography by Telescope</NavDropdown.Item>
-                            <NavDropdown.Divider />
                         </NavDropdown>
                         <Nav.Link href="home#go-to-experts">WORKSHOP</Nav.Link>
                         <Nav.Link as={Link} to="/tutorial">TUTORIALS</Nav.Link>
                         <Nav.Link href="home#go-to-blog">BLOGS</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link as={Link} to="/about">ABOUT</Nav.Link>
+                        <Nav.Link as={Link} to="/about">ABOUT ME</Nav.Link>
                         <Nav.Link as={Link} to="/login">
                             LOGIN
                         </Nav.Link>

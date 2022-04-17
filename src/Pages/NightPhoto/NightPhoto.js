@@ -4,9 +4,9 @@ const NightPhoto = ({nightPic}) => {
     const {id,img, price, description, name} = nightPic;
 
     return (
-        <div className='service'>
+        <div className='container service'>
         <img src={img} alt="" />
-        <h3>Name:  {name}</h3>
+        <p>Name:  {name}</p>
         <h5>Price ${price}</h5>
         <p>{description}</p>
     </div>

@@ -1,5 +1,8 @@
 .service{
-    border: 2px solid orange;
-    border-radius: 10px;
-    text-align: center;
+    /* text-align: center; */
+}
+.service img{
+    width: 500px;
+    transition: transform 0.25s ease;
+    cursor: zoom-in;
 }
