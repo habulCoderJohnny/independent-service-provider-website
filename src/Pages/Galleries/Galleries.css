@@ -17,6 +17,10 @@
     .gallery-container img {
         width: 450px;
     }
+
+    footer{
+        width: 100%;
+    }
 }
 /* IPad  */
 @media only screen and (max-width:577px) and (min-width:992px){
@@ -29,3 +33,6 @@
         width: 430px;
     }
 }
+
+
+

@@ -1,4 +1,4 @@
-import {useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import {useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate} from 'react-router-dom';
@@ -6,6 +6,8 @@ import auth from '../../firebase.init';
 import SocialMedia from '../Share/SocialMedia/SocialMedia';
 import './Login.css';
 import Loading from '../Share/Loading/Loading';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
@@ -13,6 +15,23 @@ const Login = () => {
     const passwordRef = useRef('');
 
     const [signInWithEmailAndPassword,user,loading,error] = useSignInWithEmailAndPassword(auth);
+
+   //foget password recover
+   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+
+      // Reset Password function
+      const resetPassword = async () => {
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Sent email');
+        }
+        else{
+            toast('please enter your email address');
+        }
+    }
+
     // for redirect func
     const navigate = useNavigate();
 
@@ -39,7 +58,7 @@ const Login = () => {
         navigate(from,{replace:true});
     }
 
-    if (loading) {
+    if (loading || sending) {
         return <Loading></Loading>
     }
 
@@ -65,13 +84,14 @@ const Login = () => {
                 <Button variant="btn btn-info btn-rounded d-block  p-0 w-25 my-4" type="submit">
                     Login
                 </Button>
-                {/*2nd Toggle */}
-            <p>New Clint? <Link className='bg-warning rounded pe-auto text-decoration-none font-weight-bold' to='/register'>Register</Link></p>
-                {/* Reset password  */}
-                <p>Forget Password? <button className='btn btn-link pe-auto text-decoration-none bg-warning p-0'>Reset Password</button></p>
             </Form>
+                  {/*2nd Toggle */}
+                  <p>New Clint? <Link className='bg-warning rounded pe-auto text-decoration-none font-weight-bold' to='/register'>Register</Link></p>
+                {/* Reset password  */}
+                <p>Forget Password? <button onClick={resetPassword} className='btn btn-link pe-auto text-decoration-none bg-warning p-0'>Reset Password</button></p>
             {errorBtnElement}
             <SocialMedia></SocialMedia>
+            <ToastContainer/>
         </div>
     );
 };
