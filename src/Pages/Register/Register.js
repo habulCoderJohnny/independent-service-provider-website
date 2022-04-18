@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SocialMedia from '../Share/SocialMedia/SocialMedia';
 import './Register.css'
 
 const Register = () => {
@@ -16,9 +17,10 @@ const Register = () => {
                 <input type="checkbox" name="terms" id="terms" />
                 <label className='ps-2' htmlFor="terms">Accept Terms & Condition</label>
                 {/* Toggle */}
-                <p className='mt-2'>Already a customer? <Link className='text-primary pe-auto text-decoration-none' to='/login'>Plz Login</Link></p>
+                <p className='mt-2'>Already a customer? <Link className='text-primary pe-auto text-decoration-none' to='/login'>Login</Link></p>
                 <input className='btn btn-primary w-25 mx-auto btn-rounded' type="submit" value="Register..." />
             </form>
+            <SocialMedia></SocialMedia>
         </div>
     );
 };

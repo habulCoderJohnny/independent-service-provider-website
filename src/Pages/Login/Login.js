@@ -2,10 +2,11 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import SocialMedia from '../Share/SocialMedia/SocialMedia';
 import './Login.css';
 const Login = () => {
     return (
-        <div className='container w-50 mx-auto'>
+        <div className='w-50 mx-auto'>
             <h2 className='text-center font-weight-light mt-2'>
             CUSTOMER LOGIN</h2>
             <Form className='text-white login-container p-5'>
@@ -25,6 +26,7 @@ const Login = () => {
                 {/* Reset password  */}
                 <p>Forget Password? <button className='btn btn-dark pe-auto p-0 text-decoration-none'>Reset Password</button></p>
             </Form>
+            <SocialMedia></SocialMedia>
         </div>
     );
 };

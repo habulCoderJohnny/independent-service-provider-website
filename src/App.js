@@ -2,7 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './Pages/Home/home/Home';
 import Galleries from './Pages/Galleries/Galleries';
-import Footer from './Pages/Share/Footer/Footer';
 import Header from './Pages/Share/Header/Header';
 import Tutorial from './Pages/Tutorials/Tutorial';
 import About from './Pages/About/About';
@@ -26,10 +25,9 @@ function App() {
         <Route path='/blog' element={<Blog/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/register' element={<Register/>}></Route>
-        
         <Route path='/about' element={<About/>}></Route>
       </Routes>
-      <Footer></Footer>
+
     </div>
   );
 }
