@@ -9,6 +9,8 @@ import About from './Pages/About/About';
 import Workshop from './Pages/Workshop/Workshop';
 import Blog from './Pages/Blogs/Blog';
 import PhotoDetail from './Pages/PhotoDetail/PhotoDetail';
+import Login from './Pages/Login/Login';
+import Register from './Pages/Register/Register';
 
 function App() {
   return (
@@ -22,6 +24,9 @@ function App() {
         <Route path='/workshop' element={<Workshop/>}></Route>
         <Route path='/tutorial' element={<Tutorial/>}></Route>
         <Route path='/blog' element={<Blog/>}></Route>
+        <Route path='/login' element={<Login/>}></Route>
+        <Route path='/register' element={<Register/>}></Route>
+        
         <Route path='/about' element={<About/>}></Route>
       </Routes>
       <Footer></Footer>

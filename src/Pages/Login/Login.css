@@ -1,0 +1,15 @@
+input:focus{
+    outline: none !important;
+    /* color: rgb(248, 41, 255); */
+    box-shadow: 0 0 15px rgba(201, 33, 137, 0.993);
+}
+input.transparent-input{
+    background-color:transparent !important;
+    border:none !important;
+    color: tomato;
+ }
+.login-container{
+background-image: url('https://cdn.shopify.com/s/files/1/0069/2712/2505/products/deadvleidruckkleinklein_600x.jpg?v=1588115483');
+background-size: 100%;
+}
+
