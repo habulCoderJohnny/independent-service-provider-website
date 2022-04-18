@@ -1,0 +1,21 @@
+.project{
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-around;
+}
+.project div{
+    /* background-color:rgb(90, 215, 68); */
+    background-image: url(https://petapixel.com/assets/uploads/2021/09/Photos-Taken-From-Even-Higher-than-the-ISS-800x420.jpg);
+    width: 400px;
+    height: 250px;
+    padding: 10px;
+    border-radius: 10px;  
+}
+
+
+.project div:hover{
+    transform: scale(1.1);
+    transition: transform 2s;
+
+}
+ 

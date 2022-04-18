@@ -1,7 +1,7 @@
 import React from 'react';
 import ComingSoon from '../ComingSoon';
 
-const Tutorial = () => {
+const Workshop = () => {
     return (
         <div>
             <ComingSoon></ComingSoon>
@@ -9,4 +9,4 @@ const Tutorial = () => {
     );
 };
 
-export default Tutorial;
+export default Workshop;
