@@ -12,6 +12,7 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import PrintImg from './Pages/PhotoDetail/PrintImg/PrintImg';
 import ProtectedPage from './Pages/Login/ProtectedPage/ProtectedPage';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/register' element={<Register/>}></Route>
         <Route path='/about' element={<About/>}></Route>
+        <Route path='*' element={<NotFound/>}></Route>
       </Routes>
 
     </div>
