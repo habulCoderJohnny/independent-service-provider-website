@@ -1,8 +1,11 @@
-input:focus{
-    outline: none !important;
-    /* color: rgb(248, 41, 255); */
-    box-shadow: 0 0 15px rgba(201, 33, 137, 0.993);
+
+.login-container input::placeholder{
+    color: tomato;
 }
+/* .login-container-input, select, textarea{
+    color: #f00;
+} */
+
 input.transparent-input{
     background-color:transparent !important;
     border:none !important;

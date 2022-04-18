@@ -17,7 +17,7 @@ const NightPhoto = ({nightPic}) => {
         <p>Name:  {name}</p>
         <h5>Price ${price}</h5>
         <p>{description}</p>
-        <button onClick={()=>navigateToServiceDetail(id)} className="btn btn-primary mb-2">Purchase: {name}</button>
+        <button onClick={()=>navigateToServiceDetail(id)} className="btn btn-primary mb-2">View: {name}</button>
     </div>
     );
 };

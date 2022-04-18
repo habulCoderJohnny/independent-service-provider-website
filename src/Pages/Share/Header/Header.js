@@ -1,9 +1,25 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../firebase.init';
 import logo from '../../../images/logo.png';
+import Loading from '../Loading/Loading';
 
 const Header = () => {
+
+    //1st for condition log/signup menu in navbar 
+    const [user,loading] = useAuthState(auth);
+    // 3rd btn click to user signout hoye jabe
+    const handleSignout = () => {
+        signOut(auth)
+    }
+
+    // if (loading) {
+    //     return <Loading></Loading>
+    // }
+
     return (
         <Navbar collapseOnSelect expand="lg" sticky='top' bg="primary" variant="dark">
             <Container>
@@ -26,9 +42,12 @@ const Header = () => {
                     </Nav>
                     <Nav>
                         <Nav.Link as={Link} to="/about">ABOUT ME</Nav.Link>
-                        <Nav.Link as={Link} to="/login">
-                            LOGIN
-                        </Nav.Link>
+                        {/*//1st for condition log/signup menu in navbar*/}
+                        {user ? <button className="btn btn-link text-white text-decoration-none" onClick={handleSignout}>SIGNOUT</button>
+                            :
+                            <Nav.Link as={Link} to="/login">
+                                LOGIN
+                            </Nav.Link>}
                     </Nav>
                 </Navbar.Collapse>
             </Container>

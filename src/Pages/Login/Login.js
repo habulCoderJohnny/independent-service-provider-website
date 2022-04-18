@@ -1,11 +1,13 @@
 import {useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link, useNavigate} from 'react-router-dom';
+import { Link, useLocation, useNavigate} from 'react-router-dom';
 import auth from '../../firebase.init';
 import SocialMedia from '../Share/SocialMedia/SocialMedia';
 import './Login.css';
 import Loading from '../Share/Loading/Loading';
+
+
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
@@ -13,6 +15,11 @@ const Login = () => {
     const [signInWithEmailAndPassword,user,loading,error] = useSignInWithEmailAndPassword(auth);
     // for redirect func
     const navigate = useNavigate();
+
+     // 4th-a visitor
+     const location = useLocation();
+     //4th  visitor's desire page info
+     const from = location?.state?.from?.pathname || "/";
 
 
 
@@ -28,7 +35,8 @@ const Login = () => {
 
     }
     if (user) {
-        navigate('/home');
+        // navigate('/home');
+        navigate(from,{replace:true});
     }
 
     if (loading) {
@@ -40,10 +48,6 @@ const Login = () => {
    if (error) {
        errorBtnElement = <p className='text-danger text-center'>Error: {error?.message}</p>
    }
-
-
-
-
 
     return (
         <div className='w-50 mx-auto'>
@@ -64,7 +68,7 @@ const Login = () => {
                 {/*2nd Toggle */}
             <p>New Clint? <Link className='bg-warning rounded pe-auto text-decoration-none font-weight-bold' to='/register'>Register</Link></p>
                 {/* Reset password  */}
-                <p>Forget Password? <button className='btn btn-dark pe-auto p-0 text-decoration-none'>Reset Password</button></p>
+                <p>Forget Password? <button className='btn btn-link pe-auto text-decoration-none bg-warning p-0'>Reset Password</button></p>
             </Form>
             {errorBtnElement}
             <SocialMedia></SocialMedia>

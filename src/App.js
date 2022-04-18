@@ -10,6 +10,8 @@ import Blog from './Pages/Blogs/Blog';
 import PhotoDetail from './Pages/PhotoDetail/PhotoDetail';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
+import PrintImg from './Pages/PhotoDetail/PrintImg/PrintImg';
+import ProtectedPage from './Pages/Login/ProtectedPage/ProtectedPage';
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
         <Route path='/home' element={<Home/>}></Route>
         <Route path='/night-photography' element={<Galleries/>}></Route>
         <Route path='/night-photography/:photoDetail' element={<PhotoDetail/>}></Route>
+        <Route path='/checkout' element={<ProtectedPage><PrintImg/></ProtectedPage>}></Route>
         <Route path='/workshop' element={<Workshop/>}></Route>
         <Route path='/tutorial' element={<Tutorial/>}></Route>
         <Route path='/blog' element={<Blog/>}></Route>
