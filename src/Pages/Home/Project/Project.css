@@ -1,10 +1,9 @@
-.project{
+.project-container{
     display: flex;
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-around;
 }
-.project div{
-    /* background-color:rgb(90, 215, 68); */
+.project-container div{
     background-image: url(https://petapixel.com/assets/uploads/2021/09/Photos-Taken-From-Even-Higher-than-the-ISS-800x420.jpg);
     width: 400px;
     height: 250px;
@@ -13,9 +12,29 @@
 }
 
 
-.project div:hover{
+.project-container div:hover{
     transform: scale(1.1);
     transition: transform 2s;
 
 }
+
+
+/* phone */
+@media only screen and (max-width:576px){
+    .project-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 40px;
+        margin-left: 30px;
+    }
+}
+/* IPad  */
+@media only screen and (max-width:577px) and (min-width:992px){
+    .project-container{
+        display: grid;
+        grid-template-columns:1fr;
+        grid-gap: 30px;
+    }
+}
+
  
