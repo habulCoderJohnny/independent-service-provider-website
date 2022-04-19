@@ -5,8 +5,10 @@ import github from '../../../images/social/github.png';
 import { useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import Loading from '../Loading/Loading';
 import auth from '../../../firebase.init';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 const SocialMedia = () => {
+
+
     // GOOGLE SignIn Implement
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     // Facebook SignIn  Implement
@@ -16,6 +18,12 @@ const SocialMedia = () => {
 
       // signin to navigate
     const navigate = useNavigate();
+
+     // 4th-a visitor
+     const location = useLocation();
+     //4th  visitor's desire page info
+     const from = location?.state?.from?.pathname || "/";
+ 
 
      // social btn blink issue 
      let errorBtnElement;
@@ -32,8 +40,7 @@ const SocialMedia = () => {
 
     // user signin to navigate
     if (user || userFb || userGit) {
-    // 1st-d
-    navigate ('/home');
+    navigate(from,{replace:true});
       
     }
     

@@ -14,6 +14,14 @@ const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
 
+    // for redirect func
+    const navigate = useNavigate();
+
+     // 4th-a visitor
+     const location = useLocation();
+     //4th  visitor's desire page info
+     const from = location?.state?.from?.pathname || "/";
+
     const [signInWithEmailAndPassword,user,loading,error] = useSignInWithEmailAndPassword(auth);
 
    //foget password recover
@@ -32,15 +40,7 @@ const Login = () => {
         }
     }
 
-    // for redirect func
-    const navigate = useNavigate();
-
-     // 4th-a visitor
-     const location = useLocation();
-     //4th  visitor's desire page info
-     const from = location?.state?.from?.pathname || "/";
-
-
+    
     const logInSubmit = event =>{
         event.preventDefault();
         const email = emailRef.current.value;
