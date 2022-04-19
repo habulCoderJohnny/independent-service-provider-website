@@ -4,7 +4,7 @@ import image from '../../../src/images/photographer.png';
 
 const About = () => {
     return (
-        <div className='d-flex'>
+        <div className='d-flex about'>
             <img className='w-50' src={image} alt="" />
             <h1 className='ms-2 text-justify'>THE GUY BEHIND THE PHOTOS
                 <h6 className='lh-base text-info'>My name is Stefan Liebermann. I am an internationally awarded landscape and night photographer and I study at the Technical University Ilmenau in Germany. I discovered my passion for photography in 2015. Fortunately, since my childhood my family enabled me to travel to countries like Venezuela, Sri Lanka, Cuba and Egypt. My passion for travelling was born. Because of my closeness to nature and my desire to understand its complexity, I decided to study natural sciences. As a physicist specializing in optics, I have the technical knowledge of optical systems such as cameras and lenses and in photography in general</h6>

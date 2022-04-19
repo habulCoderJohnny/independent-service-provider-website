@@ -2,9 +2,6 @@
 .login-container input::placeholder{
     color: tomato;
 }
-/* .login-container-input, select, textarea{
-    color: #f00;
-} */
 
 input.transparent-input{
     background-color:transparent !important;

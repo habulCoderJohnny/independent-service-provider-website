@@ -18,6 +18,14 @@
         width: 450px;
     }
 
+    .login-container{
+        /* background-repeat: no-repeat; */
+    }
+    
+    .about{
+        display: block;
+    }
+
     footer{
         width: 100%;
     }

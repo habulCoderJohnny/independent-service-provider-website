@@ -16,7 +16,7 @@ const ProtectedPage = ({ children }) => {
     if (loading) {
         return <Loading></Loading>
     }
-    
+
      // 2nd, jodi user login na thake tahohe then navigate kore login e pathabo
     if (!user) {
         return <Navigate to="/login" state={{ from: location }} replace />;

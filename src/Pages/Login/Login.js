@@ -25,7 +25,7 @@ const Login = () => {
         const email = emailRef.current.value;
         if (email) {
             await sendPasswordResetEmail(email);
-            toast('Sent email');
+            toast('Sent email reset your password');
         }
         else{
             toast('please enter your email address');
@@ -39,9 +39,6 @@ const Login = () => {
      const location = useLocation();
      //4th  visitor's desire page info
      const from = location?.state?.from?.pathname || "/";
-
-
-
 
 
     const logInSubmit = event =>{
@@ -86,9 +83,9 @@ const Login = () => {
                 </Button>
             </Form>
                   {/*2nd Toggle */}
-                  <p>New Clint? <Link className='bg-warning rounded pe-auto text-decoration-none font-weight-bold' to='/register'>Register</Link></p>
+                  <p>New Clint? <Link className='rounded pe-auto text-decoration-none font-weight-bold' to='/register'>Register</Link></p>
                 {/* Reset password  */}
-                <p>Forget Password? <button onClick={resetPassword} className='btn btn-link pe-auto text-decoration-none bg-warning p-0'>Reset Password</button></p>
+                <p>Forget Password? <button onClick={resetPassword} className='btn btn-link pe-auto text-decoration-none p-0'>Reset Password</button></p>
             {errorBtnElement}
             <SocialMedia></SocialMedia>
             <ToastContainer/>
