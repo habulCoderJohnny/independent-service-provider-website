@@ -21,7 +21,7 @@ const Header = () => {
     // }
 
     return (
-        <Navbar collapseOnSelect expand="lg" sticky='top' bg="primary" variant="dark" className='sm:container'>
+        <Navbar collapseOnSelect expand="lg" sticky='top' bg="primary" variant="dark" className='col-sm-12'>
             <Container>
                 <Navbar.Brand as={Link} to="/home">
                     <img className='rounded w-100' height={40} src={logo} alt="" />

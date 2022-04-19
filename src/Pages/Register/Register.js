@@ -20,21 +20,31 @@ const Register = () => {
 
     const navigate = useNavigate();
 
-
-    if(loading ||updating){
-        return <Loading></Loading>
-    }
-
     if (user) {
         console.log('user', user);  
        }
 
      // error showing (conditional render)
-   let errorBtnElement;
+   let errorBtnElements;
    if (error) {
-       errorBtnElement = <p className='text-danger text-center'>Error: {error?.message}</p>
+       errorBtnElements = <p className='text-danger text-center'>Error: {error?.message}</p>
+       console.log(error);
    }
+
+
+//    if (error) {
+//     return (
+//       <div>
+//         <p>Error: {error.message}</p>
+//       </div>
+//     );
+//   }
    
+   
+   if(loading ||updating){
+    return <Loading></Loading>
+}
+
     const registerFormSubmit = async (event) => {
         event.preventDefault();
         const name = event.target.name.value;
@@ -42,12 +52,13 @@ const Register = () => {
         const password = event.target.password.value;
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
-        alert('Updated profile');
+        // console.log('Updated profile');
+        // alert('Be patient! Updating profile...it was making under Jr. developer ');
         navigate('/home');
     }
 
     return (
-        <div className='w-75 mx-auto'>
+        <div className='w-75 mx-auto col-sm-12'>
             <h2 className='text-center mt-4 text-primary'>CREATE ACCOUNT</h2>
             <form onSubmit={registerFormSubmit} className='register-form'>
                 <input type="text" name="name" id="1" placeholder='Your Name' required />
@@ -68,7 +79,7 @@ const Register = () => {
                    <p className='mt-2'>Already a customer? <Link className='text-primary pe-auto text-decoration-none' to='/login'>Login</Link></p>
                
             </form>
-            {errorBtnElement}
+            {{errorBtnElements}}
             <SocialMedia></SocialMedia>
              {/* <ToastContainer/> */}
 
