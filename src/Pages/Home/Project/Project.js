@@ -4,7 +4,7 @@ import './Project.css';
 
 const Project = () => {
     return (
-        <div id='go-project'>
+        <div id='go-project' className='sm:container'>
             <h1 className='ms-5 my-5 '><u>MY RECENT PROJECTS</u> </h1>
       
             <div className='project-container text-primary display-4'>

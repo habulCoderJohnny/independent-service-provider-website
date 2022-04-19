@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="bg-light text-center text-primary">
+        <footer className="bg-light text-center text-primary sm:container">
         <div className="text-center p-3 " style=
         {{backgroundColor: "rgba(0, 0, 0, 0.2)"}}>
           © 2022 Copyright:

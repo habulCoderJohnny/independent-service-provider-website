@@ -10,7 +10,7 @@ const Galleries = () => {
         .then(data=>setNightPics(data))
     },[]);
     return (
-        <div id='go-to-services' className='container'>
+        <div id='go-to-services' className='container sm:container'>
             <h1 className='text-primary display-3 text-center my-4'>Night Photogrphy: {nightPics.length}</h1>
             {/* 1st: create <nightPic compo> then sent data in props nightPic name-e */}
             <div className='gallery-container'> 

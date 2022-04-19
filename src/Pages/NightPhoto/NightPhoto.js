@@ -1,6 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './NightPhoto.css';
+
+
 const NightPhoto = ({nightPic}) => {
     const {id,img, price, description, name} = nightPic;
     //url-3rd declore useNavigate
